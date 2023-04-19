@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9412508f-d40b-4fe3-bcd2-8dfee11fc1c6" name="Changes" comment="success">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/controllers/HotelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/controllers/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/service/IUpload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/serviceimpl/UploadImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/models/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/models/Hotel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;ToolWindowBuild.ShowToolbar&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/spring-boot-spring-security-jwt-authentication/src/main/java/com/bezkoder/springjwt/repository&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -147,20 +145,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="success" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/controllers/AuthController.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bezkoder/springjwt/controllers/AuthController.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((HotelService)iHotelService).hotelRepository" custom="com.bezkoder.springjwt.serviceimpl.HotelService" />
