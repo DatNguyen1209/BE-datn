@@ -4,6 +4,8 @@ import com.bezkoder.springjwt.models.BaseEntities;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 public class OrderDTO extends BaseEntities {
@@ -16,6 +18,9 @@ public class OrderDTO extends BaseEntities {
     private String price;
     private int capacity;
     private boolean status;
+//    private Date dayRental;
+//    private float dayNum;
+//    private Long totalMoney;
     private String images;
     private Long roomId;
     private Long hotelId;

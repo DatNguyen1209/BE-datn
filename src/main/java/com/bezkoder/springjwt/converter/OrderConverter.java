@@ -19,9 +19,11 @@ public class OrderConverter {
     private UserRepository userRepository;
     public OrderHotelDetail toEntity(OrderDTO dto){
         OrderHotelDetail order = new OrderHotelDetail();
-        order.setUser(userRepository.findByUsername(dto.getUsername()).orElseThrow(()->
-             new RuntimeException("User Not Found!!!")));
-        order.setUserName(order.getUser().getUsername());
+//        order.setDayNum(dto.getDayNum());
+//        order.setDayRental(dto.getDayRental());
+//        order.setTotalMoney(dto.getTotalMoney());
+        order.setUser(userRepository.getReferenceById(dto.getUserId()));
+        order.setUsername(order.getUser().getUsername());
         order.setFullName(order.getUser().getFullName());
         order.setEmail(order.getUser().getEmail());
         order.setPhone(order.getUser().getPhone());
@@ -41,7 +43,7 @@ public class OrderConverter {
             dto.setId(orderHotelDetail.getId());
         }
         dto.setUserId(orderHotelDetail.getId());
-        dto.setUsername(orderHotelDetail.getUserName());
+        dto.setUsername(orderHotelDetail.getUsername());
         dto.setFullName(orderHotelDetail.getFullName());
         dto.setHotelId(orderHotelDetail.getId());
         dto.setRoomId(orderHotelDetail.getId());
@@ -49,10 +51,13 @@ public class OrderConverter {
         dto.setPrice(orderHotelDetail.getPrice());
         dto.setPhone(orderHotelDetail.getPhone());
         dto.setRoomName(orderHotelDetail.getRoomName());
+//        dto.setDayNum(orderHotelDetail.getDayNum());
+//        dto.setDayRental(orderHotelDetail.getDayRental());
+//        dto.setTotalMoney(orderHotelDetail.getTotalMoney());
         return dto;
     }
     public OrderHotelDetail toEntities(OrderDTO dto,OrderHotelDetail orderHotelDetail){
-        orderHotelDetail.setUserName(dto.getUsername());
+        orderHotelDetail.setUsername(dto.getUsername());
         orderHotelDetail.setFullName(dto.getFullName());
         orderHotelDetail.setPrice(dto.getPrice());
         orderHotelDetail.setModifiedDate(new Date());

@@ -24,9 +24,11 @@ public class UserDTO extends BaseEntities {
     private String role;
 
     public interface UserViewDto{
+        Long getId();
         String getUsername();
         String getPassword();
         String getFullName();
+        String getPhone();
         String getRole();
     }
 }

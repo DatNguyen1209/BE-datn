@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "order_hotel_detail")
@@ -13,7 +14,7 @@ import javax.persistence.*;
 public class OrderHotelDetail extends BaseEntities{
 
     @Column(name = "user_name")
-    private String userName;
+    private String username;
     @Column(name = "full_name")
     private String fullName;
     @Column(name = "phone")
@@ -30,6 +31,12 @@ public class OrderHotelDetail extends BaseEntities{
     private int capacity;
     @Column(name = "images")
     private String images;
+//    @Column(name = "day_rental")
+//    private Date dayRental;
+//    @Column(name = "day_num")
+//    private float dayNum;
+//    @Column(name = "total_money")
+//    private Long totalMoney ;
     @Column(name = "status")
     private boolean status = false;
 
@@ -39,11 +46,13 @@ public class OrderHotelDetail extends BaseEntities{
     private User user;
 
     @JsonBackReference
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "room_id",referencedColumnName = "id")
     private Room room;
     @JsonBackReference
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "hotel",referencedColumnName = "id")
     private Hotel hotel;
+
+
 }

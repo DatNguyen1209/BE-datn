@@ -43,12 +43,34 @@ public class UserController {
     }
 
     @CrossOrigin
-    @GetMapping("/getAllUserByRoleName")
+    @GetMapping("/getAllUserByRoleAdmin")
     public ResponseEntity<?> getAllUserByRoleAdmin(@RequestParam("page") int page, @RequestParam("size") int size
     ){
         try {
             Pageable pageable = PageRequest.of(page - 1, size);
             var userList = userRepository.getListUserByRoleAdmin(pageable);
+
+            var a = userRepository.getReferenceById(1L);
+//        return PageDTO.of(userList, userList.stream().map(user -> converter.toDTO(user)).collect(Collectors.toList()));
+            return userList != null
+                    ? ResponseEntity.ok(userList)
+                    : ResponseEntity.badRequest().body(userList);
+//        var uL = userRepository.getListUserByRoleAdmin();
+//        return  uL.size() > 0
+//                ? ResponseEntity.ok(uL)
+//                : ResponseEntity.badRequest().body(uL);
+        } catch (Exception ex ){
+            log.error("ádfsdfsdfsdf"+ ex);
+            return null;
+        }
+    }
+    @CrossOrigin
+    @GetMapping("/getAllUserByRoleUser")
+    public ResponseEntity<?> getAllUserByRoleUser(@RequestParam("page") int page, @RequestParam("size") int size
+    ){
+        try {
+            Pageable pageable = PageRequest.of(page - 1, size);
+            var userList = userRepository.getListUserByRoleUser(pageable);
 
             var a = userRepository.getReferenceById(1L);
 //        return PageDTO.of(userList, userList.stream().map(user -> converter.toDTO(user)).collect(Collectors.toList()));

@@ -36,7 +36,7 @@ public class Room extends BaseEntities{
     @JsonManagedReference
     @OneToMany(mappedBy = "room")
     private List<ImagesRoom> rooms;
-    @JsonIgnore
-    @OneToOne(mappedBy = "room")
-    private OrderHotelDetail orderHotelDetail;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+    private List<OrderHotelDetail> orderHotelDetail;
 }

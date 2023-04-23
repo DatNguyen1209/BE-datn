@@ -1,5 +1,6 @@
 package com.bezkoder.springjwt.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -49,7 +51,9 @@ public class User extends BaseEntities{
         joinColumns = @JoinColumn(name = "user_id"), 
         inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
-
+  @OneToMany(mappedBy = "user")
+  @JsonManagedReference
+  private List<OrderHotelDetail> orderHotelDetails;
   public User(String username, String password, String fullName, String email, String address, String phone) {
     this.username = username;
     this.password = password;
