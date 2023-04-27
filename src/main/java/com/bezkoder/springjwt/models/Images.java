@@ -19,7 +19,7 @@ public class Images extends BaseEntities {
     private String url;
     @Lob
     private byte[] data;
-    @JsonBackReference
+    @JsonBackReference(value = "hotel-images")
     @ManyToOne
     @JoinColumn(name = "hotelImg",referencedColumnName = "id")
     private Hotel hotel;

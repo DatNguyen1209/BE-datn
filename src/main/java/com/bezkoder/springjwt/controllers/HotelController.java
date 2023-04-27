@@ -19,8 +19,8 @@ public class HotelController {
     @Autowired
     HotelRepository hotelRepository;
     @CrossOrigin
-    @PostMapping("/createhotel")
-    public HotelDTO createHotel(@RequestBody HotelDTO dto){
+    @PostMapping( "/createhotel")
+    public HotelDTO createHotel(@RequestBody HotelDTO dto ){
         return iHotelService.save(dto);
     }
     @CrossOrigin

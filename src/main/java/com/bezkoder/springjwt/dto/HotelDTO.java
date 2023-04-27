@@ -12,7 +12,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
 public class HotelDTO extends BaseEntities {
@@ -26,7 +25,6 @@ public class HotelDTO extends BaseEntities {
     private String description;
     private String hotelType;
     private String image;
-    private List<Images> images;
 
 
 }

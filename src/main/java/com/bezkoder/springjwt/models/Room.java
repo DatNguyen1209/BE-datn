@@ -29,7 +29,7 @@ public class Room extends BaseEntities{
     private String image;
     @Column(name = "is_status")
     private boolean isStatus = true;
-    @JsonBackReference
+    @JsonBackReference(value = "hotel-rooms")
     @ManyToOne
     @JoinColumn(name = "hotelId",referencedColumnName = "id")
     private Hotel hotelId;

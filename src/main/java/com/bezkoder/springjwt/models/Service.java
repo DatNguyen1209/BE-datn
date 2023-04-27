@@ -20,7 +20,7 @@ public class Service extends BaseEntities {
     private String url;
     @Column(name = "is_status")
     private boolean isStatus = true;
-    @JsonBackReference
+    @JsonBackReference(value = "hotel-services")
     @ManyToOne
     @JoinColumn(name = "hotel_service", referencedColumnName = "id")
     private Hotel hotel;

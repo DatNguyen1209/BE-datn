@@ -4,6 +4,7 @@ import com.bezkoder.springjwt.dto.HotelDTO;
 import com.bezkoder.springjwt.dto.PageDTO;
 import com.bezkoder.springjwt.dto.RoomDTO;
 import com.bezkoder.springjwt.models.Room;
+import com.bezkoder.springjwt.repository.RoomRepository;
 import com.bezkoder.springjwt.service.IRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +18,9 @@ import java.util.List;
 @RequestMapping("/api/v1/room")
 public class RoomController {
     @Autowired
-    private IRoomService iRoomService;
+     IRoomService iRoomService;
+    @Autowired
+    RoomRepository roomRepository;
     @GetMapping("/getallroom")
     public PageDTO<RoomDTO> getAllUser(
             @RequestParam("page") int page,
@@ -25,9 +28,11 @@ public class RoomController {
     ){
         return iRoomService.findAllWithPageable(page,size);
     }
-    @GetMapping("/getbyId/{id}")
+    @GetMapping("/getbyid/{id}")
     public Room  getById(@PathVariable("id") Long id){
-        return iRoomService.findById(id);
+        return roomRepository.findById(id).orElseThrow(() -> {
+            throw new RuntimeException("Not Found!!!");
+        });
     }
     @PostMapping("/create")
     public void create(@RequestBody RoomDTO dto){
