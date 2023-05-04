@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/v1/user")
 @Slf4j
+@CrossOrigin
 public class UserController {
     @Autowired
     UserRepository userRepository;

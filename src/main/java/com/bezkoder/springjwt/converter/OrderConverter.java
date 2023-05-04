@@ -32,8 +32,12 @@ public class OrderConverter {
         order.setHotel(hotelRepository.getReferenceById(dto.getHotelId()));
         order.setHotelName(order.getHotel().getHotelName());
         order.setRoom(roomRepository.getReferenceById(dto.getRoomId()));
-        order.setRoomName(dto.getRoomName());
+        order.setRoomName(order.getRoom().getRoomName());
         order.setPrice(order.getRoom().getPrice());
+        order.setDelete(true);
+        order.setDayRental(dto.getDayRental());
+        order.setDayNum(dto.getDayNum());
+        order.setTotalMoney(dto.getTotalMoney());
         order.setCapacity(order.getRoom().getCapacity());
         return order;
     }
@@ -51,9 +55,13 @@ public class OrderConverter {
         dto.setPrice(orderHotelDetail.getPrice());
         dto.setPhone(orderHotelDetail.getPhone());
         dto.setRoomName(orderHotelDetail.getRoomName());
-//        dto.setDayNum(orderHotelDetail.getDayNum());
-//        dto.setDayRental(orderHotelDetail.getDayRental());
-//        dto.setTotalMoney(orderHotelDetail.getTotalMoney());
+        dto.setDelete(orderHotelDetail.isDelete());
+        dto.setDayRental(orderHotelDetail.getDayRental());
+        dto.setDayNum(orderHotelDetail.getDayNum());
+        dto.setTotalMoney(orderHotelDetail.getTotalMoney());
+        dto.setDayNum(orderHotelDetail.getDayNum());
+        dto.setDayRental(orderHotelDetail.getDayRental());
+        dto.setTotalMoney(orderHotelDetail.getTotalMoney());
         return dto;
     }
     public OrderHotelDetail toEntities(OrderDTO dto,OrderHotelDetail orderHotelDetail){

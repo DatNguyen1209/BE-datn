@@ -33,6 +33,7 @@ public class RoomConverter {
         dto.setPrice(room.getPrice());
         dto.setCapacity(room.getCapacity());
         dto.setBedType(room.getBedType());
+        dto.setHotelId(room.getHotelId().getId());
         return  dto;
     }
     public Room toEntities(RoomDTO dto, Room room){

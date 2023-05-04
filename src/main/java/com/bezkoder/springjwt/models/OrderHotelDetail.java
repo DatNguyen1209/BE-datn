@@ -31,14 +31,16 @@ public class OrderHotelDetail extends BaseEntities{
     private int capacity;
     @Column(name = "images")
     private String images;
-//    @Column(name = "day_rental")
-//    private Date dayRental;
-//    @Column(name = "day_num")
-//    private float dayNum;
-//    @Column(name = "total_money")
-//    private Long totalMoney ;
+    @Column(name = "day_rental")
+    private Date dayRental;
+    @Column(name = "day_num")
+    private float dayNum;
+    @Column(name = "total_money")
+    private Long totalMoney ;
     @Column(name = "status")
     private boolean status = false;
+    @Column(name = "is_delete")
+    private boolean isDelete;
 
     @JsonBackReference
     @ManyToOne

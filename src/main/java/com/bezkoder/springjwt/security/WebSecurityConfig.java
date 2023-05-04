@@ -109,6 +109,8 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         .antMatchers("/api/**").permitAll()
             .antMatchers("/api/v1/hotel/**").permitAll()
             .antMatchers("/api/v1/room/**").permitAll()
+            .antMatchers("/api/v1/order/**").permitAll()
+            .antMatchers("/api/v1/user/getUserById/**").permitAll()
 
             .antMatchers("/api/v1/hotel/updated/**").permitAll()
 

@@ -7,6 +7,7 @@ import com.bezkoder.springjwt.dto.RoomDTO;
 import com.bezkoder.springjwt.models.Room;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.Id;
 import java.util.List;
 
 public interface IRoomService {

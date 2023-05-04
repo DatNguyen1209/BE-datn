@@ -11,7 +11,6 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RoomDTO extends BaseEntities {
     private Long roomId;
     private String roomName;

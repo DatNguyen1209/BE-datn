@@ -8,5 +8,4 @@ import org.springframework.data.jpa.repository.Query;
 public interface HotelRepository extends JpaRepository<Hotel,Long> {
     @Query(nativeQuery = true,value = "SELECT * FROM Room WHERE room_name = ?1")
     Hotel findRoomCurrentByName(String roomName);
-
 }

@@ -18,6 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.Id;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -149,6 +150,8 @@ public class RoomService implements IRoomService {
         });
     }
 
+
+
     @Override
     public void deleteById(Long id) {
         Room room = this.findById(id);
@@ -167,5 +170,17 @@ public class RoomService implements IRoomService {
     public List<Room> getAllRoom() {
 
         return roomRepository.findAll();
+    }
+
+    public List<Room> lstRoomByHotelId(Long hotelId){
+//        try {
+            var res = roomRepository.findAll()
+                    .stream().filter(s -> {
+                        return s.getHotelId() == hotelRepository.getReferenceById(hotelId);
+                    }).toList();
+            return res;
+//        } catch (Exception e){
+//            ret
+//        }
     }
 }

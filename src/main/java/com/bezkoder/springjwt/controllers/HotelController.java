@@ -25,7 +25,7 @@ public class HotelController {
     }
     @CrossOrigin
     @GetMapping("/getbyid/{id}")
-    public Hotel getById(@PathVariable("id") Long id){
+    public Hotel getById(@PathVariable Long id){
        return hotelRepository.findById(id).orElseThrow(() ->
            new RuntimeException("Not Found " + id)
        );
