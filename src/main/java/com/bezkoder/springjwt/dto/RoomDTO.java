@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 public class RoomDTO extends BaseEntities {
     private Long roomId;
     private String roomName;
-    private String price;
+    private float price;
     private int capacity;
     private String bedType;
     private String image;

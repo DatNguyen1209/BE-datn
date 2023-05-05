@@ -66,7 +66,7 @@ public class RoomController {
         return iRoomService.save(files,id);
     }
     @PutMapping("/update/{id}")
-    public RoomDTO updateRoom(@RequestBody RoomDTO dto,@PathVariable("id") Long id){
+    public RoomDTO updateRoom(@RequestBody RoomDTO dto,@PathVariable Long id){
         dto.setId(id);
         return iRoomService.updateRoom(dto,id);
     }

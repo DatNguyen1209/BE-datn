@@ -24,13 +24,13 @@ public class OrderHotelDetail extends BaseEntities{
     @Column(name = "room_name")
     private String roomName;
     @Column(name = "price")
-    private String price;
+    private float price;
     @Column(name = "email")
     private String email;
     @Column(name = "capacity")
     private int capacity;
-    @Column(name = "images")
-    private String images;
+    @Column(name = "image")
+    private String image;
     @Column(name = "day_rental")
     private Date dayRental;
     @Column(name = "day_num")
@@ -40,7 +40,7 @@ public class OrderHotelDetail extends BaseEntities{
     @Column(name = "status")
     private boolean status = false;
     @Column(name = "is_delete")
-    private boolean isDelete;
+    private boolean isDelete  = true;
 
     @JsonBackReference
     @ManyToOne

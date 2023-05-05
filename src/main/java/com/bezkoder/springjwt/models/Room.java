@@ -20,7 +20,7 @@ public class Room extends BaseEntities{
     @Column(name = "room_name")
     private String roomName;
     @Column(name = "price")
-    private String price;
+    private float price;
     @Column(name = "capacity")
     private int capacity;
     @Column(name = "bed_type")

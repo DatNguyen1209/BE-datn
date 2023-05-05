@@ -39,6 +39,7 @@ public class RoomConverter {
     public Room toEntities(RoomDTO dto, Room room){
         room.setRoomName(dto.getRoomName());
         room.setPrice(dto.getPrice());
+        room.setImage(dto.getImage());
         room.setBedType(dto.getBedType());
         room.setModifiedDate(new Date());
         room.setCapacity(dto.getCapacity());

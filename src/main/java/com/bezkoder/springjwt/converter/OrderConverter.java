@@ -34,6 +34,7 @@ public class OrderConverter {
         order.setRoom(roomRepository.getReferenceById(dto.getRoomId()));
         order.setRoomName(order.getRoom().getRoomName());
         order.setPrice(order.getRoom().getPrice());
+        order.setImage(order.getRoom().getImage());
         order.setDelete(true);
         order.setDayRental(dto.getDayRental());
         order.setDayNum(dto.getDayNum());

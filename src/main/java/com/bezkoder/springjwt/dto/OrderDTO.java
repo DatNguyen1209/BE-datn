@@ -15,13 +15,13 @@ public class OrderDTO extends BaseEntities {
     private String phone;
     private String hotelName;
     private String roomName;
-    private String price;
+    private float price;
     private int capacity;
     private boolean status;
     private Date dayRental;
     private float dayNum;
     private Long totalMoney;
-    private String images;
+    private String image;
     private Long roomId;
     private Long hotelId;
     private boolean isDelete;
