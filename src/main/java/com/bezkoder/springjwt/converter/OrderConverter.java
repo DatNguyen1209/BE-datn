@@ -57,21 +57,24 @@ public class OrderConverter {
         dto.setPhone(orderHotelDetail.getPhone());
         dto.setRoomName(orderHotelDetail.getRoomName());
         dto.setDelete(orderHotelDetail.isDelete());
+        dto.setCreatedDate(orderHotelDetail.getCreatedDate());
+        dto.setModifiedDate(orderHotelDetail.getModifiedDate());
+        dto.setImage(orderHotelDetail.getImage());
+        dto.setHotelName(orderHotelDetail.getHotelName());
         dto.setDayRental(orderHotelDetail.getDayRental());
         dto.setDayNum(orderHotelDetail.getDayNum());
         dto.setTotalMoney(orderHotelDetail.getTotalMoney());
         dto.setDayNum(orderHotelDetail.getDayNum());
+        dto.setIsConfirm(orderHotelDetail.getIsConfirm());
         dto.setDayRental(orderHotelDetail.getDayRental());
         dto.setTotalMoney(orderHotelDetail.getTotalMoney());
         return dto;
     }
     public OrderHotelDetail toEntities(OrderDTO dto,OrderHotelDetail orderHotelDetail){
-        orderHotelDetail.setUsername(dto.getUsername());
-        orderHotelDetail.setFullName(dto.getFullName());
-        orderHotelDetail.setPrice(dto.getPrice());
         orderHotelDetail.setModifiedDate(new Date());
-        orderHotelDetail.setPhone(dto.getPhone());
-        orderHotelDetail.setCapacity(dto.getCapacity());
+        orderHotelDetail.setDayNum(dto.getDayNum());
+        orderHotelDetail.setDayRental(dto.getDayRental());
+        orderHotelDetail.setTotalMoney(dto.getTotalMoney());
         return orderHotelDetail;
     }
 }

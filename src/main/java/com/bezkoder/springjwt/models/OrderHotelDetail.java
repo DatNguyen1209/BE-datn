@@ -33,6 +33,8 @@ public class OrderHotelDetail extends BaseEntities{
     private String image;
     @Column(name = "day_rental")
     private Date dayRental;
+    @Column(name = "is_confirm")
+    private Boolean isConfirm = null;
     @Column(name = "day_num")
     private float dayNum;
     @Column(name = "total_money")

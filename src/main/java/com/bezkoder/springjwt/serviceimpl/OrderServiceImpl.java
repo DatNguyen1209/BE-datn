@@ -55,6 +55,22 @@ public class OrderServiceImpl implements IOrderService {
         return converter.toDTO(result);
     }
 
+    @Override
+    public void confirm(Long id) {
+        OrderHotelDetail orderHotelDetail = orderRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Not Found!!!"));
+        orderHotelDetail.setIsConfirm(true);
+        orderRepository.save(orderHotelDetail);
+    }
+
+    @Override
+    public void cancel(Long id) {
+        OrderHotelDetail orderHotelDetail = orderRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Not Found!!!"));
+        orderHotelDetail.setIsConfirm(false);
+        orderRepository.save(orderHotelDetail);
+    }
+
 //    @Override
 //    public void delete(Long id) {
 //        OrderHotelDetail orderHotelDetail = orderRepository.findById(id)

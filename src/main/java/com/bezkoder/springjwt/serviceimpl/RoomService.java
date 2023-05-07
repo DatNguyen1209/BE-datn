@@ -42,10 +42,6 @@ public class RoomService implements IRoomService {
     public void save(RoomDTO dto) {
         try {
             Room room = null;
-            var roomFound = roomRepository.findRoomCurrentByName(dto.getRoomName());
-            if(roomFound != null){
-                throw new RuntimeException("Room name already exist!!!");
-            }else {
                 room = new Room();
                 room.setId(dto.getRoomId());
                 room.setRoomName(dto.getRoomName());
@@ -57,7 +53,6 @@ public class RoomService implements IRoomService {
                 room.setStatus(dto.isStatus());
                 room.setHotelId(hotelRepository.getReferenceById(dto.getHotelId()));
                 roomRepository.save(room);
-            }
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }

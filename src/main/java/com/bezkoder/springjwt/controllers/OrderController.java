@@ -28,13 +28,13 @@ public class OrderController {
         return orderRepository.findAll();
     }
     @GetMapping("/getbyid/{id}")
-    public  OrderHotelDetail getById(@PathVariable("id") Long id){
+    public  OrderHotelDetail getById(@PathVariable Long id){
         return orderRepository.findById(id).orElseThrow(() ->
                 new RuntimeException("Not Found!!!"));
     }
     @CrossOrigin
     @GetMapping("/getallhotel")
-    public PageDTO<OrderDTO> getAllUser(
+    public PageDTO<OrderDTO> getAllOrder(
             @RequestParam("page") int page,
             @RequestParam("size") int size
     ){
@@ -44,6 +44,14 @@ public class OrderController {
     public OrderDTO updateOrder(@RequestBody OrderDTO dto,@PathVariable("id") Long id){
         dto.setId(id);
         return iOrderService.update(dto,id);
+    }
+    @PutMapping("/confirm/{id}")
+    public void confirm(@PathVariable Long id){
+        iOrderService.confirm(id);
+    }
+    @PutMapping("/cancel/{id}")
+    public void cancel(@PathVariable Long id){
+        iOrderService.cancel(id);
     }
 //    @DeleteMapping("/delete/{id}")
 //    public void delete(@PathVariable("id") Long id){

@@ -16,6 +16,7 @@ public class OrderDTO extends BaseEntities {
     private String hotelName;
     private String roomName;
     private float price;
+    private Boolean isConfirm;
     private int capacity;
     private boolean status;
     private Date dayRental;

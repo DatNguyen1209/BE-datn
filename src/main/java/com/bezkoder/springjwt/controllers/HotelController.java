@@ -37,7 +37,7 @@ public class HotelController {
     }
     @CrossOrigin
     @GetMapping("/getallhotel")
-    public PageDTO<HotelDTO> getAllUser(
+    public PageDTO<HotelDTO> getAllHotel(
             @RequestParam("page") int page,
             @RequestParam("size") int size
     ){
