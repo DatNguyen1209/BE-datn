@@ -34,12 +34,9 @@ public class UserConverter {
         var usse = user.getRoles();
         dto.setUsername(user.getUsername());
         dto.setPassword(user.getPassword());
-//        var role = roleRepository.findAllById(user.getRoles());
         for(Role role : user.getRoles()){
             dto.setRole(role.getName().name());
         }
-//        var role = roleRepository.getReferenceById(3L);
-//        dto.setROLE_ADMIN(role.getName().name());
         dto.setFullName(user.getFullName());
         dto.setCreatedDate(user.getCreatedDate());
         dto.setModifiedDate(user.getModifiedDate());
@@ -52,8 +49,10 @@ public class UserConverter {
         user.setUsername(dto.getUsername());
         user.setFullName(dto.getFullName());
         user.setPhone(dto.getPhone());
+        user.setAddress(dto.getAddress());
         user.setModifiedDate(new Date());
         user.setEmail(dto.getEmail());
+        user.setUsername(dto.getUsername());
         return  user;
     }
 

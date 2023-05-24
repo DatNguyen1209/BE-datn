@@ -57,5 +57,12 @@ public class OrderController {
 //    public void delete(@PathVariable("id") Long id){
 //        iOrderService.delete(id);
 //    }
-
+    @PutMapping("/delete/{id}")
+    public void DeleteOrder(@PathVariable Long id){
+        iOrderService.delete(id);
+    }
+    @PutMapping("/check/{id}")
+    public void Check(@PathVariable Long id){
+        iOrderService.check(id);
+    }
 }

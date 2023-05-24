@@ -68,6 +68,7 @@ public class OrderConverter {
         dto.setIsConfirm(orderHotelDetail.getIsConfirm());
         dto.setDayRental(orderHotelDetail.getDayRental());
         dto.setTotalMoney(orderHotelDetail.getTotalMoney());
+        dto.setStatus(orderHotelDetail.isStatus());
         return dto;
     }
     public OrderHotelDetail toEntities(OrderDTO dto,OrderHotelDetail orderHotelDetail){

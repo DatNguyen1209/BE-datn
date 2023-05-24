@@ -25,6 +25,6 @@ public class HotelDTO extends BaseEntities {
     private String description;
     private String hotelType;
     private String image;
-
+    private String service;
 
 }

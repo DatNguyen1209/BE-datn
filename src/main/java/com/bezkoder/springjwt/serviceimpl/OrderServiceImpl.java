@@ -71,13 +71,25 @@ public class OrderServiceImpl implements IOrderService {
         orderRepository.save(orderHotelDetail);
     }
 
-//    @Override
-//    public void delete(Long id) {
-//        OrderHotelDetail orderHotelDetail = orderRepository.findById(id)
-//                .orElseThrow(() -> new RuntimeException("Not Found!!!"));
-//        orderHotelDetail.setDelete(true);
-//        orderRepository.save(orderHotelDetail);
-//
-//    }
+    @Override
+    public void delete(Long id) {
+        OrderHotelDetail orderHotelDetail = orderRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Not Found!!!"));
+        orderHotelDetail.setDelete(false);
+        orderRepository.save(orderHotelDetail);
+
+    }
+
+    @Override
+    public void check(Long id) {
+        try{
+            OrderHotelDetail orderHotelDetail = orderRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Not Found"));
+            orderHotelDetail.setStatus(true);
+            orderRepository.save(orderHotelDetail);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 
 }

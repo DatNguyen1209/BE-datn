@@ -38,7 +38,11 @@ public class Hotel extends BaseEntities{
     @Lob
     @Column(name = "image")
     private String image;
-
+    @Column(name = "service")
+    private String service;
+    @JsonManagedReference(value = "hotel-feedbacks")
+    @OneToMany(mappedBy = "hotelId")
+    private List<Feedback> feedbacks;
     @JsonManagedReference(value = "hotel-images")
     @OneToMany(mappedBy = "hotel")
     private List<Images> images;

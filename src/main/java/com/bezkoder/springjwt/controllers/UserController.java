@@ -89,7 +89,7 @@ public class UserController {
     }
     @CrossOrigin
     @PutMapping("/update/{id}")
-    public  UserDTO updateUser(@RequestBody UserDTO dto,@PathVariable("id") Long id){
+    public  UserDTO updateUser(@RequestBody UserDTO dto,@PathVariable Long id){
         dto.setId(id);
         return iUserService.update(dto);
     }

@@ -9,6 +9,7 @@ public interface IOrderService {
     OrderDTO update(OrderDTO dto, Long id);
     void confirm (Long id);
     void cancel(Long id);
-//    void delete(Long id);
+    void delete(Long id);
+    void  check(Long id);
 
 }

@@ -20,6 +20,7 @@ public class HotelConverter {
         entity.setDescription(dto.getDescription());
         entity.setHotelType(dto.getHotelType());
         entity.setViewers(dto.getViewers());
+        entity.setService(dto.getService());
 //        entity.setImages(dto.getImages());
         return entity;
     }
@@ -40,6 +41,7 @@ public class HotelConverter {
         dto.setDescription(hotel.getDescription());
         dto.setFromPrice(hotel.getFromPrice());
         dto.setViewers(hotel.getViewers());
+        dto.setService(hotel.getService());
         return dto;
     }
     public Hotel toEntities(HotelDTO dto, Hotel hotel){
@@ -49,9 +51,11 @@ public class HotelConverter {
         hotel.setAddress(dto.getAddress());
         hotel.setFromPrice(dto.getFromPrice());
         hotel.setRated(dto.getRated());
+        hotel.setService(dto.getService());
         hotel.setDescription(dto.getDescription());
         hotel.setHotelType(dto.getHotelType());
         hotel.setImage(dto.getImage());
+        hotel.setService(dto.getService());
         hotel.setViewers(dto.getViewers());
         return hotel;
     }
