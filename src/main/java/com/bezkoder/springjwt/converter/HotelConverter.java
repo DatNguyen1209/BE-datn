@@ -42,6 +42,7 @@ public class HotelConverter {
         dto.setFromPrice(hotel.getFromPrice());
         dto.setViewers(hotel.getViewers());
         dto.setService(hotel.getService());
+        dto.setStatus(hotel.isStatus());
         return dto;
     }
     public Hotel toEntities(HotelDTO dto, Hotel hotel){

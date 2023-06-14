@@ -67,5 +67,15 @@ public class HotelService implements IHotelService {
         return converter.toDTO(result);
     }
 
+    @Override
+    public void delete(Long id) {
+        Hotel hotel = hotelRepository.findById(id).orElseThrow(() -> {
+            throw new RuntimeException("Not Found!!!");
+        });
+        hotel.setStatus(false);
+        hotelRepository.save(hotel);
+
+    }
+
 
 }

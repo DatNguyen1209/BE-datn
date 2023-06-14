@@ -17,14 +17,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 
 
-  @Query(nativeQuery = true , value = " select u.id as id, u.full_name as fullName, u.password as password, u.username as username,u.phone as phone, r.name  as role"+
+  @Query(nativeQuery = true , value = " select u.id as id, u.full_name as fullName, u.password as password,u.address as address, u.username as username,u.phone as phone, r.name  as role"+
 
           " from user_roles ur " +
           " inner join users u on ur.user_id = u.id " +
           " inner join roles r on ur.role_id = r.id " +
           " where ur.role_id = 3 ")
   Page<UserDTO.UserViewDto> getListUserByRoleAdmin(Pageable pageable);
-  @Query(nativeQuery = true , value = " select u.id as id, u.full_name as fullName, u.password as password, u.username as username,u.phone as phone, r.name  as role"+
+  @Query(nativeQuery = true , value = " select u.id as id, u.full_name as fullName, u.password as password,u.address as address, u.username as username,u.phone as phone, r.name  as role"+
 
           " from user_roles ur " +
           " inner join users u on ur.user_id = u.id " +

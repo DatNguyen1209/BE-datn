@@ -76,6 +76,7 @@ public class OrderConverter {
         orderHotelDetail.setDayNum(dto.getDayNum());
         orderHotelDetail.setDayRental(dto.getDayRental());
         orderHotelDetail.setTotalMoney(dto.getTotalMoney());
+        orderHotelDetail.setIsConfirm(null);
         return orderHotelDetail;
     }
 }

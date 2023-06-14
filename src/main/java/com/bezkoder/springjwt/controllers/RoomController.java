@@ -75,7 +75,7 @@ public class RoomController {
         return iRoomService.updateRoomImg(files,id);
     }
     @PutMapping("/delete/{id}")
-    public void delete(@PathVariable("id") Long id){
+    public void delete(@PathVariable Long id){
         iRoomService.deleteById(id);
     }
     @PutMapping("/restore/{id}")

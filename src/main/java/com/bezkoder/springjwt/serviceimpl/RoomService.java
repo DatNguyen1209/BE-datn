@@ -149,7 +149,9 @@ public class RoomService implements IRoomService {
 
     @Override
     public void deleteById(Long id) {
-        Room room = this.findById(id);
+        Room room = roomRepository.findById(id).orElseThrow(()->{
+            throw new RuntimeException("Not Found!!!");
+        });
         room.setStatus(false);
         roomRepository.save(room);
     }

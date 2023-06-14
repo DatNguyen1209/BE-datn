@@ -49,4 +49,9 @@ public class HotelController {
         dto.setId(id);
         return iHotelService.update(dto,id);
     }
+    @CrossOrigin
+    @PutMapping("delete/{id}")
+    public void delete(@PathVariable("id") Long id){
+        iHotelService.delete(id);
+    }
 }

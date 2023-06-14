@@ -28,6 +28,7 @@ public class UserDTO extends BaseEntities {
         String getUsername();
         String getPassword();
         String getFullName();
+        String getAddress();
         String getPhone();
         String getRole();
     }
